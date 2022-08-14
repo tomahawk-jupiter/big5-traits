@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Traits from "../../components/Traits";
+import CompareBoard from "./CompareBoard";
 
 const Welcome = ({ setPage }) => {
   const [showTraits, setShowTraits] = useState(false);

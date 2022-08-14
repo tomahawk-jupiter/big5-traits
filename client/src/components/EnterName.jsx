@@ -29,7 +29,6 @@ const EnterName = ({ nextQuestion, setUserName }) => {
     } catch (error) {
       console.log(error);
     }
-    // nextQuestion();
   };
 
   return (
@@ -41,10 +40,6 @@ const EnterName = ({ nextQuestion, setUserName }) => {
         type="text"
         className="name-input"
       />
-      <p>
-        Your name will be displayed along with your scores for others to see so
-        use a fake one if you want.
-      </p>
       {nameTaken ? <div>This name is taken</div> : ""}
       <button onClick={saveNameAndStart}>BEGIN</button>
     </>

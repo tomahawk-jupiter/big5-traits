@@ -4,8 +4,8 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-const dotenv = require("dotenv").config();
-const cors = require("cors");
+require("dotenv").config();
+const helmet = require("helmet");
 
 // Connect to mongoDB
 mongoose.connect(process.env.MONGO_URI, () => {
@@ -16,7 +16,8 @@ mongoose.connect(process.env.MONGO_URI, () => {
 const resultsRouter = require("./routes/results");
 
 const app = express();
-app.use(cors());
+
+app.use(helmet());
 
 // view engine setup
 // app.set("views", path.join(__dirname, "views"));

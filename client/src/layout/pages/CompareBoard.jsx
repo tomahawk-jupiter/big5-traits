@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axiosInstance from "../../axios.config";
+import Traits from "../../components/Traits";
 
 // make api call to backend to get all results from DB and display.
 // You can use axios and do it in a useEffect hook.
@@ -27,6 +28,7 @@ const PrevScoreRow = ({ scoreEntry }) => {
 
 const CompareBoard = ({ setPage }) => {
   const [prevScores, setPrevScores] = useState([]);
+  const [showTraits, setShowTraits] = useState(false);
 
   useEffect(() => {
     const getPreviousScores = async () => {
@@ -40,7 +42,7 @@ const CompareBoard = ({ setPage }) => {
 
   return (
     <div className="main">
-      <h1>Trait Scores</h1>
+      <h1>Previous Scores</h1>
       <table>
         <thead>
           <tr>
@@ -61,6 +63,14 @@ const CompareBoard = ({ setPage }) => {
       <button className="quitButton" onClick={() => setPage("Welcome")}>
         BACK
       </button>
+
+      {showTraits ? (
+        <Traits setPage={setPage} setShowTraits={setShowTraits} />
+      ) : (
+        <button onClick={() => setShowTraits(true)}>
+          Show trait descriptions
+        </button>
+      )}
     </div>
   );
 };
