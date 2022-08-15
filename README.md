@@ -1,5 +1,7 @@
 # Big5 Traits
 
+[Live App](https://big5-traits.herokuapp.com/)
+
 A simple questionaire that gives your scores for the big5 personality traits which are openness, conscientiousness, extraversion, agreeableness and neuroticism.
 
 There is a backend for saving the results in a DB so other people can see them and compare them to their friends scores.
